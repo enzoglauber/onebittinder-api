@@ -1,0 +1,4 @@
+ docker-compose up --build
+docker-compose run --rm app bundle install 
+docker-compose run --rm app bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java
+docker-compose run --rm app bundle exec rake db:create db:migrate db:seed
